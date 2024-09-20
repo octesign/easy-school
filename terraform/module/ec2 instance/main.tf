@@ -11,3 +11,4 @@ resource "aws_instance" "easy-sec" {
     Name = "easy-sec"
   }
 }
+
