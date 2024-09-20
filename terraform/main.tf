@@ -25,9 +25,8 @@ resource "aws_vpc" "easy-school" {
 
 #create ec2 instance 
 resource "aws_instance" "easy-sec" {
-  ami = ""
-  instance_type = " "
-
+  ami = var.ami_value
+  instance_type = var.ami_value
   tags = {
     Name = "easy-sec"
   }
