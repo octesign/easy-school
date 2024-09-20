@@ -11,3 +11,7 @@ settings.json
 .idea
 
 static/
+.terraform.lock.hcl
+.terraform
+terraform.tfstate
+terraform.tfstate.backup
