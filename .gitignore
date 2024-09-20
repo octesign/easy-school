@@ -15,3 +15,5 @@ static/
 .terraform
 terraform.tfstate
 terraform.tfstate.backup
+# Add this line to .gitignore
+terraform/.terraform/
