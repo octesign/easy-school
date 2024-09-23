@@ -1,6 +1,6 @@
-provider "aws" {
-  region = "us-east-1"
-}
+# provider "aws" {
+#   region = "us-east-1"
+# }
 
 
 #provision vpc resource - aws_vpc

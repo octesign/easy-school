@@ -1,7 +1,7 @@
-#AWS provider
-provider "aws" {
-  region = "us-east-1"
-}
+# #AWS provider
+# provider "aws" {
+#   region = "us-east-1"
+# }
 
 #create ec2 instance 
 resource "aws_instance" "easy-sec" {
@@ -11,4 +11,3 @@ resource "aws_instance" "easy-sec" {
     Name = "easy-sec"
   }
 }
-
