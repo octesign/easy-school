@@ -16,7 +16,7 @@ provider "aws" {
 #module calling and use
 module "vpc" {
   source = "./module/vpc"
-  cidr = "192.168.0.0/16"
+  cidr   = "192.168.0.0/16"
 }
 
 module "ec2_instance" {
@@ -26,9 +26,9 @@ module "ec2_instance" {
 }
 
 module "key_pair" {
-  source = "./module/key pair"
-  key_name = "developer -  keys"
-  public_key= file("~/.ssh/id_rsa.pub")
+  source     = "./module/key pair"
+  key_name   = "developer -  keys"
+  public_key = file("~/.ssh/id_rsa.pub")
 }
 
 
