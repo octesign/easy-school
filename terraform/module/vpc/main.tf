@@ -5,7 +5,7 @@
 
 #provision vpc resource - aws_vpc
 resource "aws_vpc" "easy-school" {
-  cidr_block       = var.cidr
+  cidr_block       = var.cidr 
   instance_tenancy = "default"
 
   tags = {
