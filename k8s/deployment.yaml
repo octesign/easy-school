@@ -1,22 +1,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: easy_school-deployment
+  name: easy-school-deployment
   labels:
-    app: easy_school
+    app: easy-school
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: easy_school
+      app: easy-school
   template:
     metadata:
       labels:
-        app: easy_school
+        app: easy-school
     spec:
       containers:
-      - name: easy_school
+      - name: easy-school
         image: octe/easyschool:latest
         ports:
         - containerPort: 8080
-  
+      #   volumeMounts:
+      #   - name: config-volume
+      #     mountPath: /config
+      # volumes:
+      # - name: config-volume
+      #   configMap:
+      #     name: easy-school-config
