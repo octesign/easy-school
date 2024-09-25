@@ -19,6 +19,9 @@ module "vpc" {
   cidr   = "192.168.0.0/16"
 }
 
+module "security_group" {
+  source = "./module/sg"
+}
 module "key_pair" {
   source     = "./module/key_pair"
   key_name   = "developer -  keys"
