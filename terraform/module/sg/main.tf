@@ -56,7 +56,7 @@ resource "aws_security_group" "easy-private-sg" {
 }
 
 #Private Security group rules for private subnets for Internal VPC Traffic (All Ports)
-resource "aws_vpc_security_group_ingress_rule" "easy-private-ib1" {
+resource "aws_vpc_security_group_ingress_rule" "easy-private-ib" {
   description = "All TCP"
   security_group_id = aws_security_group.easy-private-sg.id
   cidr_ipv4 = "192.168.0.0/16"
