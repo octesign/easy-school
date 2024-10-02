@@ -19,15 +19,6 @@ module "vpc" {
   cidr   = "192.168.0.0/16"
 }
 
-module "security_group" {
-  source = "./module/sg"
-}
-module "key_pair" {
-  source     = "./module/key_pair"
-  key_name   = "developer -  keys"
-  public_key = file("~/.ssh/id_rsa.pub")
-}
-
 module "subnets" {
   source = "./module/subnets"
   easy_public_subnet_cidr_1  = "192.168.1.0/24"
@@ -39,10 +30,29 @@ module "subnets" {
   assign_public_ip           = true
 }
 
+module "igw" {
+  source = "./module/igw"
+}
+
+module "route_table" {
+  source = "./module/route_table"
+}
+
+module "rt_association" {
+  source = "./module/rt_association"
+}
+
+module "security_group" {
+  source = "./module/sg"
+}
+module "key_pair" {
+  source     = "./module/key_pair"
+  key_name   = "developer -  keys"
+  public_key = file("~/.ssh/id_rsa.pub")
+}
+
 module "ec2_instance" {
   source              = "./module/ec2_instance"
   ami_value           = "ami-0e86e20dae9224db8"
   instance_type_value = "t2.micro"
-  
-  # subnet_id =
 }

@@ -7,6 +7,7 @@
 resource "aws_instance" "easy-sec" {
   ami           = var.ami_value
   instance_type = var.instance_type_value
+  key_name = module.key_pair.easy_access.key_name
   subnet_id = path.module.subnets.easy_public_subnet_1.id
 
   tags = {
@@ -17,6 +18,7 @@ resource "aws_instance" "easy-sec" {
 resource "aws_instance" "easy-prim" {
   ami = var.ami_value
   instance_type = var.instance_type_value
+  key_name = module.key_pair.easy_access.key_name
   subnet_id = module.subnets.easy_private_subnet_1_id
 
   tags = {
