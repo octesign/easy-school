@@ -3,7 +3,7 @@
 #   region = "us-east-1"
 # }
 
-#create ec2 instances in the public subnet 1
+#create ec2 instances in the public subnet 2
 resource "aws_instance" "easy-pub" {
   count = var.instance_count_value_sec
   ami = var.ami_value
@@ -18,7 +18,7 @@ resource "aws_instance" "easy-pub" {
   }
 }
 
-#create ec2 instances in the public subnet 2
+#create ec2 instances in the public subnet 1
 resource "aws_instance" "easy-sec" {
   count = var.instance_count_value_sec
   ami           = var.ami_value
@@ -33,7 +33,7 @@ resource "aws_instance" "easy-sec" {
   }
 }
 
-#create ec2 instances in the private subnet 1
+#create ec2 instances in the private subnet 2
 resource "aws_instance" "easy-back" {
   count = var.instance_count_value_prim
   ami = var.ami_value
@@ -48,7 +48,7 @@ resource "aws_instance" "easy-back" {
   }
 }
 
-#create ec2 instances in the private subnet 2
+#create ec2 instances in the private subnet 1
 resource "aws_instance" "easy-prim" {
   count = var.instance_count_value_prim
   ami = var.ami_value
