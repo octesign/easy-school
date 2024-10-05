@@ -55,4 +55,10 @@ module "ec2_instance" {
   source              = "./module/ec2_instance"
   ami_value           = "ami-0e86e20dae9224db8"
   instance_type_value = "t2.micro"
+  instance_count_value_prim = 1
+  instance_count_value_sec  = 2
+  # key_name_value      = module.key_pair.key_pair_name_out
+  # security_group_id   = module.security_group.security_group_id_out
+  # subnet_id_value_prim      = module.subnets.subnet_id_out_prim
+  # subnet_id_value_sec       = module.subnets.subnet_id_out_sec
 }
